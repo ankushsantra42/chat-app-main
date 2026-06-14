@@ -1,18 +1,13 @@
 {
-  "name": "chat-app-root",
+  "name": "fullstack-chat-app-redux",
   "version": "1.0.0",
-  "description": "Full stack chat application",
-  "engines": {
-    "node": ">=20.0.0"
-  },
+  "description": "MERN Stack Chat App with Socket.io",
+  "main": "backend/server.js",
   "scripts": {
-    "install-all": "npm install --prefix backend && npm install --prefix frontend",
-    "build": "npm run build --prefix frontend",
-    "build-full": "./build.sh",
-    "start": "NODE_ENV=production node backend/server.js",
-    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\""
-  },
-  "devDependencies": {
-    "concurrently": "^8.2.2"
+    "install-backend": "cd backend && npm install",
+    "install-frontend": "cd frontend && npm install",
+    "build-frontend": "cd frontend && npm run build",
+    "render-build": "npm run install-backend && npm run install-frontend && npm run build-frontend",
+    "start": "node backend/server.js"
   }
 }
