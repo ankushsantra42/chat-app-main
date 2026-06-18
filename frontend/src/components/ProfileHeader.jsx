@@ -37,6 +37,15 @@ function ProfileHeader() {
     };
   };
 
+  const handleLogout = ()=> {
+    dispatch(logout()).then(()=> {
+      console.log("Logout success");
+      window.location.href = "/login";
+    }).catch((error) => {
+      console.log("Logout failed:", error);
+    });
+  }
+
   return (
     /* <div className="p-6 border-b border-slate-700/50"> */
     <div className="p-4 border-b border-slate-700/50">
@@ -82,7 +91,7 @@ function ProfileHeader() {
           {/* LOGOUT BTN */}
           <button
             className="text-slate-400 hover:text-slate-200 transition-colors"
-            onClick={logout}
+            onClick={handleLogout}
           >
             <LogOutIcon className="size-5" />
           </button>
